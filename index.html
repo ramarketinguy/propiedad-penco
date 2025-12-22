@@ -36,16 +36,25 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.2);
         }
+        .pulse-emerald {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
     </style>
-    <!-- Chosen Palette: Rafa Osorio Brand (Clean Professional) -> Background: Stone-50, Primary: Slate-900, Accent: Emerald-600 -->
+    <!-- Chosen Palette: Rafa Osorio Brand (Clean Professional) -> Accent: Emerald-600 -->
     <!-- Application Structure Plan: 
-         1. Header: Branding (Google Drive Thumbnail Link - Larger) + Direct Navigation.
-         2. Hero: Value Proposition + REAL PROPERTY IMAGE (Google Drive Thumbnail Link - Larger) + Dual CTAs.
-         3. Financial Dashboard: Interactive toggle (Monthly/Annual) + Charts.
-         4. Asset Analysis: Grid layout for "Scarcity" factors.
+         1. Header: Branding (Google Drive Thumbnail Link) + Direct Navigation.
+         2. Hero: Value Proposition + REAL PROPERTY IMAGE + Dual CTAs.
+         3. Financial Dashboard: Interactive toggle (Monthly/Annual) + Highlight $0 EXPENSES.
+         4. Asset Analysis: Grid layout including NO COMMON EXPENSES as a key scarcity factor.
          5. Location: Visual bars for connectivity.
-         6. Expert Opinion: Simplified header, direct insights.
-         7. Footer/Contact: Updated 2025, Specific WhatsApp Link without visible phone number.
+         6. Expert Opinion: Simplified header, direct insights on high net yield.
+         7. Footer/Contact: Updated 2025, Specific WhatsApp Link.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
@@ -54,15 +63,14 @@
     <!-- Navigation / Header -->
     <nav class="bg-white/90 backdrop-blur-md border-b border-stone-200 sticky top-0 z-50 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-32"> <!-- Increased navbar height to accommodate larger logo -->
+            <div class="flex justify-between h-24"> 
                 <div class="flex items-center">
-                    <!-- LOGO: Larger size (h-28) -->
-                    <img src="https://drive.google.com/thumbnail?id=1o1yy4i1RQS0pvLWGL2iCSUTi0L8EE_h-&sz=w1000" alt="Rafa Osorio Bienes Raíces" class="h-28 w-auto object-contain">
+                    <img src="https://drive.google.com/thumbnail?id=1o1yy4i1RQS0pvLWGL2iCSUTi0L8EE_h-&sz=w1000" alt="Rafa Osorio Bienes Raíces" class="h-20 w-auto object-contain">
                 </div>
                 <div class="flex items-center space-x-6">
-                    <button onclick="scrollToSection('financials')" class="hidden md:block text-sm font-medium text-slate-600 hover:text-emerald-600 transition">Rentabilidad</button>
-                    <button onclick="scrollToSection('property')" class="hidden md:block text-sm font-medium text-slate-600 hover:text-emerald-600 transition">El Activo</button>
-                    <a href="https://apartamento.mercadolibre.com.uy/MLU-993014454-ph-en-venta-en-brazo-oriental-de-2-dormitorios-2-banos-terraza-con-parrillero-con-renta-_JM#origin%3Dshare%26sid%3Dshare" target="_blank" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold shadow-md flex items-center">
+                    <button onclick="scrollToSection('financials')" class="hidden md:block text-sm font-medium text-slate-600 hover:text-emerald-600 transition font-bold">Rentabilidad</button>
+                    <button onclick="scrollToSection('property')" class="hidden md:block text-sm font-medium text-slate-600 hover:text-emerald-600 transition font-bold">El Activo</button>
+                    <a href="https://bit.ly/493Ttg9" target="_blank" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold shadow-md flex items-center">
                         <span class="mr-2">📄</span> Ver Ficha ML
                     </a>
                 </div>
@@ -77,14 +85,14 @@
                 <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                     <div class="sm:text-center lg:text-left">
                         <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold tracking-wide mb-6 uppercase border border-emerald-200">
-                            <span class="mr-1">●</span> Oportunidad Activa
+                            <span class="mr-1">●</span> Oportunidad Inmobiliaria
                         </div>
                         <h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl mb-6">
                             <span class="block xl:inline">Rentabilidad real del</span>
                             <span class="block text-emerald-600 xl:inline">7.05% Anual</span>
                         </h1>
                         <p class="mt-3 text-base text-slate-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 font-light">
-                            PH en Brazo Oriental con renta inmediata. Inversión de <strong>U$S 100.000</strong> llave en mano con garantía ANDA.
+                            PH en Brazo Oriental con renta inmediata. Inversión de <strong>U$S 100.000</strong> llave en mano, con garantía ANDA y el mayor beneficio: <span class="text-emerald-700 font-bold bg-emerald-50 px-1">SIN GASTOS COMUNES.</span>
                         </p>
                         <div class="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start gap-4">
                             <div class="rounded-md shadow">
@@ -93,7 +101,7 @@
                                 </button>
                             </div>
                             <div class="mt-3 sm:mt-0 sm:ml-3">
-                                <a href="https://apartamento.mercadolibre.com.uy/MLU-993014454-ph-en-venta-en-brazo-oriental-de-2-dormitorios-2-banos-terraza-con-parrillero-con-renta-_JM#origin%3Dshare%26sid%3Dshare" target="_blank" class="w-full flex items-center justify-center px-8 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition shadow-sm hover:text-emerald-600">
+                                <a href="https://bit.ly/493Ttg9" target="_blank" class="w-full flex items-center justify-center px-8 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition shadow-sm hover:text-emerald-600">
                                     📸 Ver Fotos
                                 </a>
                             </div>
@@ -103,17 +111,19 @@
             </div>
         </div>
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-stone-100 flex items-center justify-center border-l border-stone-200 py-12 lg:py-0">
-            <!-- Visual Abstract representation REPLACED with Drive Image Thumbnail Endpoint (sz=w1200) -->
             <div class="relative w-full h-full flex flex-col items-center justify-center p-8">
-                <!-- Changed max-w-md to max-w-xl to make the image larger -->
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500 max-w-xl bg-white border border-stone-100">
-                     <!-- Added onerror fallback just in case -->
                     <img src="https://drive.google.com/thumbnail?id=1i9LkyfGIKql67kGLjBq1xyefQC5hIWcn&sz=w1200" 
                          alt="Fachada Propiedad Brazo Oriental" 
-                         class="w-full h-auto object-cover"
-                         onerror="this.src='https://placehold.co/600x400?text=Imagen+No+Disponible'; this.parentElement.classList.add('bg-gray-200');">
+                         class="w-full h-auto object-cover">
                     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                         <p class="text-white text-sm font-bold">Brazo Oriental • PH • 86m²</p>
+                    </div>
+                    <!-- Exclusive Badge -->
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-slate-900 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg shadow-xl uppercase tracking-widest border border-slate-700">
+                            $0 Gastos Comunes
+                        </span>
                     </div>
                 </div>
             </div>
@@ -126,10 +136,9 @@
             <div class="text-center mb-16">
                 <h2 class="text-sm text-emerald-600 font-bold tracking-widest uppercase mb-2">Dashboard Financiero</h2>
                 <p class="text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                    Tus números claros
+                    Maximiza tu Flujo de Caja
                 </p>
                 
-                <!-- Toggle Control -->
                 <div class="mt-8 flex justify-center">
                     <div class="bg-stone-100 rounded-xl p-1 shadow-inner border border-stone-200 inline-flex">
                         <button id="btn-monthly" onclick="setPeriod('monthly')" class="px-6 py-2 rounded-lg text-sm font-semibold bg-white text-emerald-700 shadow-sm transition-all border border-stone-100">Mensual</button>
@@ -140,37 +149,40 @@
 
             <div class="mt-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <!-- Cards -->
                     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         <div class="glass-panel rounded-2xl p-6 border-l-4 border-emerald-500 shadow-lg hover:shadow-xl transition-shadow duration-300">
                             <dt class="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">Ingreso Bruto <span class="period-label normal-case text-emerald-600">(Mensual)</span></dt>
                             <dd class="mt-2 text-3xl font-bold text-slate-900" id="val-income">$23.500</dd>
-                            <dd class="mt-1 text-xs text-slate-400">Garantía ANDA</dd>
+                            <dd class="mt-1 text-xs text-slate-400">Garantía ANDA activa</dd>
                         </div>
-                        <div class="glass-panel rounded-2xl p-6 border-l-4 border-slate-300 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="glass-panel rounded-2xl p-6 border-l-4 border-slate-900 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-slate-50">
                             <dt class="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">Gastos Comunes</dt>
-                            <dd class="mt-2 text-3xl font-bold text-slate-900">$1.000</dd>
-                            <dd class="mt-1 text-xs text-slate-400">Expensas bajas</dd>
+                            <dd class="mt-2 text-3xl font-bold text-slate-900">$0</dd>
+                            <dd class="mt-1">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-slate-900 text-white uppercase tracking-tighter">
+                                    SIN COSTOS
+                                </span>
+                            </dd>
                         </div>
                         <div class="glass-panel rounded-2xl col-span-1 sm:col-span-2 shadow-xl border border-emerald-100 bg-emerald-50/30">
                             <div class="px-6 py-8 flex flex-col items-center">
                                 <dt class="text-sm font-bold text-emerald-800 uppercase tracking-widest">Rentabilidad Bruta Anual</dt>
                                 <dd class="mt-2 text-6xl font-extrabold text-emerald-600 tracking-tighter">7.05%</dd>
                                 <div class="mt-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 border border-emerald-200">
-                                    🚀 Supera la media del mercado
+                                    📈 Rendimiento Neto Superior
                                 </div>
+                                <p class="mt-4 text-[10px] text-slate-400 text-center uppercase tracking-widest">Sin administración que disminuya tu ganancia</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Chart Container -->
                     <div class="bg-white p-8 rounded-2xl shadow-xl border border-stone-100 relative">
                         <h3 class="text-lg leading-6 font-bold text-slate-900 mb-6 text-center">Comparativa de Rendimiento</h3>
                         <div class="chart-container">
                             <canvas id="yieldChart"></canvas>
                         </div>
                         <div class="absolute bottom-4 left-0 right-0 text-center">
-                            <p class="text-xs text-slate-400 font-mono">*Estimado vs Promedio Montevideo 2024</p>
+                            <p class="text-xs text-slate-400 font-mono">*Comparativa de mercado vs Inversión en Penco</p>
                         </div>
                     </div>
                 </div>
@@ -187,12 +199,11 @@
                     Anomalía de Mercado
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-slate-500 lg:mx-auto font-light">
-                    Por qué esta propiedad defiende su valor mejor que la competencia.
+                    Combinamos factores de escasez para asegurar tu inversión a largo plazo.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                <!-- Feature 1 -->
                 <div class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-stone-100">
                     <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-emerald-100 text-emerald-600 text-3xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                         🛏️
@@ -201,34 +212,31 @@
                     <p class="text-sm text-slate-500 leading-relaxed">Amplios y luminosos. Distribución en dos plantas que maximiza la privacidad.</p>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="group bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-emerald-100 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-wider">
-                        Clave
+                        Único
                     </div>
                     <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-slate-900 text-white text-3xl mb-6 shadow-lg">
                         🚿
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">2 Baños Completos</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Factor crítico de reventa. Extremadamente inusual en propiedades de este ticket.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed">Factor crítico de reventa. Prácticamente inexistente en este rango de precio.</p>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-stone-100">
                     <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-emerald-100 text-emerald-600 text-3xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                         🍖
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Terraza & Parrillero</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">15m² de espacio exterior privado. El "commodity" más buscado post-pandemia.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed">Espacio exterior privado de 15m². Alta demanda en alquileres modernos.</p>
                 </div>
 
-                <!-- Feature 4 -->
-                <div class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-stone-100">
-                    <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-emerald-100 text-emerald-600 text-3xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                        📑
+                <div class="group bg-slate-900 p-8 rounded-2xl shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-700 pulse-emerald">
+                    <div class="flex items-center justify-center h-14 w-14 rounded-xl bg-emerald-500 text-white text-3xl mb-6">
+                        💸
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Contrato Vigente</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">Hasta Dic 2026. Inquilina estable con intención de permanencia. Garantía ANDA.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">$0 Gastos Comunes</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">Cero gastos de mantenimiento administrativo. Toda la renta va directo a tu bolsillo.</p>
                 </div>
             </div>
         </div>
@@ -245,57 +253,49 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Context -->
                 <div class="space-y-8">
                     <p class="text-slate-300 text-lg leading-relaxed">
-                        La propiedad se encuentra en un punto neurálgico de crecimiento residencial. La cercanía a avenidas principales asegura una demanda constante.
+                        Situado en un barrio consolidado con una conectividad inmejorable hacia avenidas principales.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700">
                             <span class="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-slate-900 border border-slate-600 text-emerald-400 font-bold">A</span>
-                            <p class="ml-4 text-slate-300 font-medium">Zona de valorización a mediano plazo.</p>
+                            <p class="ml-4 text-slate-300 font-medium">Bulevar Artigas a 150 metros.</p>
                         </div>
                         <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700">
                             <span class="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-slate-900 border border-slate-600 text-emerald-400 font-bold">B</span>
-                            <p class="ml-4 text-slate-300 font-medium">Transporte público hacia toda la ciudad.</p>
+                            <p class="ml-4 text-slate-300 font-medium">Zona de alta demanda y plusvalía.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Custom Connectivity Visualizer -->
                 <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
-                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-8">Conectividad Directa</h3>
-                    
-                    <!-- Connectivity Bar 1 -->
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-8">Tiempos de Traslado</h3>
                     <div class="mb-8">
                         <div class="flex justify-between mb-2">
-                            <span class="text-base font-bold text-white">Bulevar Artigas</span>
-                            <span class="text-sm font-mono text-emerald-400">150m (2 min pie)</span>
+                            <span class="text-base font-bold text-white">Av. Luis A. de Herrera</span>
+                            <span class="text-sm font-mono text-emerald-400">3 min</span>
                         </div>
                         <div class="w-full bg-slate-700 rounded-full h-3">
                             <div class="bg-emerald-500 h-3 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]" style="width: 95%"></div>
                         </div>
                     </div>
-
-                    <!-- Connectivity Bar 2 -->
                     <div class="mb-8">
                         <div class="flex justify-between mb-2">
                             <span class="text-base font-bold text-white">Nuevo Centro Shopping</span>
-                            <span class="text-sm font-mono text-slate-400">5 min auto</span>
+                            <span class="text-sm font-mono text-slate-400">5 min</span>
                         </div>
                         <div class="w-full bg-slate-700 rounded-full h-3">
                             <div class="bg-blue-500 h-3 rounded-full" style="width: 75%"></div>
                         </div>
                     </div>
-
-                    <!-- Connectivity Bar 3 -->
                     <div class="mb-1">
                         <div class="flex justify-between mb-2">
-                            <span class="text-base font-bold text-white">Centro de Montevideo</span>
-                            <span class="text-sm font-mono text-slate-400">15 min bus</span>
+                            <span class="text-base font-bold text-white">Terminal Tres Cruces</span>
+                            <span class="text-sm font-mono text-slate-400">10 min</span>
                         </div>
                         <div class="w-full bg-slate-700 rounded-full h-3">
-                            <div class="bg-purple-500 h-3 rounded-full" style="width: 50%"></div>
+                            <div class="bg-purple-500 h-3 rounded-full" style="width: 55%"></div>
                         </div>
                     </div>
                 </div>
@@ -303,7 +303,7 @@
         </div>
     </section>
 
-    <!-- Agent Insight / Why this property -->
+    <!-- Agent Insight -->
     <section class="py-20 bg-emerald-50/50 border-t border-emerald-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-12">
@@ -311,46 +311,42 @@
             </h2>
 
             <div class="grid grid-cols-1 gap-6 md:grid-cols-3 text-left">
-                <!-- Card 1 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-emerald-100/50">
                     <h3 class="text-base font-bold text-slate-900 mb-3 flex items-center">
                         <span class="mr-2 text-xl">⚡</span> Vacancia Cero
                     </h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Eliminas el riesgo y el costo de los meses vacíos iniciales y las comisiones de búsqueda.
+                        Cobras desde el primer mes. Inquilina estable con garantía ANDA hasta Dic 2026.
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-emerald-100/50">
                     <h3 class="text-base font-bold text-slate-900 mb-3 flex items-center">
-                        <span class="mr-2 text-xl">🛡️</span> Seguridad Jurídica
+                        <span class="mr-2 text-xl">💎</span> Máxima Rentabilidad
                     </h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Garantía de ANDA: El "estándar de oro". Asegura el cobro de la renta automáticamente.
+                        Al no tener gastos comunes, tu rentabilidad neta es real y no está sujeta a decisiones de terceros.
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-emerald-100/50">
                     <h3 class="text-base font-bold text-slate-900 mb-3 flex items-center">
-                        <span class="mr-2 text-xl">💎</span> Valor de Salida
+                        <span class="mr-2 text-xl">🔝</span> Liquidez Futura
                     </h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Al tener 2 baños y terraza, esta propiedad siempre tendrá una liquidez superior al promedio.
+                        2 baños y parrillero son las características más buscadas en reventa para este ticket de precio.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sticky Contact / Footer -->
+    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <p class="text-slate-900 font-bold">Rafa Osorio Bienes Raíces</p>
                 <p class="text-slate-500 text-sm mt-1">© 2025 Todos los derechos reservados.</p>
-                <p class="text-slate-400 text-xs mt-2">Datos basados en contrato vigente.</p>
             </div>
             
             <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
@@ -362,124 +358,35 @@
     </footer>
 
     <script>
-        // --- Data & State ---
         const investmentData = {
-            priceUSD: 100000,
             rentUYU: 23500,
-            expensesUYU: 1000,
+            expensesUYU: 0,
             yield: 7.05,
-            marketAvgYield: 4.8, // Adjusted slightly for visual contrast
+            marketAvgYield: 4.8, 
             bankYield: 3.5
         };
 
         let currentPeriod = 'monthly';
 
-        // --- DOM Elements ---
-        const btnMonthly = document.getElementById('btn-monthly');
-        const btnAnnual = document.getElementById('btn-annual');
-        const displayIncome = document.getElementById('val-income');
-        
-        // --- Chart Initialization ---
-        let yieldChart;
-
-        function initCharts() {
-            const ctx = document.getElementById('yieldChart').getContext('2d');
-            
-            Chart.defaults.font.family = "'Inter', sans-serif";
-            Chart.defaults.color = '#64748b';
-
-            yieldChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Esta Propiedad', 'Promedio Mercado', 'Plazo Fijo USD'],
-                    datasets: [{
-                        label: 'Rentabilidad Anual (%)',
-                        data: [investmentData.yield, investmentData.marketAvgYield, investmentData.bankYield],
-                        backgroundColor: [
-                            '#059669', // Emerald 600
-                            '#cbd5e1', // Slate 300
-                            '#e2e8f0'  // Slate 200
-                        ],
-                        hoverBackgroundColor: [
-                            '#047857', 
-                            '#94a3b8', 
-                            '#cbd5e1'
-                        ],
-                        borderRadius: 8,
-                        borderSkipped: false,
-                        barPercentage: 0.6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.parsed.y + '% Anual';
-                                }
-                            },
-                            backgroundColor: '#0f172a',
-                            titleColor: '#f8fafc',
-                            bodyColor: '#f8fafc',
-                            padding: 12,
-                            cornerRadius: 8,
-                            displayColors: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: '#f1f5f9',
-                                borderDash: [5, 5]
-                            },
-                            ticks: {
-                                callback: function(value) { return value + '%' },
-                                font: { weight: '600' }
-                            },
-                            border: { display: false }
-                        },
-                        x: {
-                            grid: { display: false },
-                            border: { display: false },
-                            ticks: { font: { weight: '500' } }
-                        }
-                    },
-                    animation: {
-                        duration: 1500,
-                        easing: 'easeOutQuart'
-                    }
-                }
-            });
-        }
-
-        // --- Logic ---
-
         function setPeriod(period) {
             currentPeriod = period;
+            const btnMonthly = document.getElementById('btn-monthly');
+            const btnAnnual = document.getElementById('btn-annual');
+            const displayIncome = document.getElementById('val-income');
             
             if(period === 'monthly') {
-                btnMonthly.classList.replace('bg-white', 'bg-white'); // Ensuring bg
-                btnMonthly.classList.add('text-emerald-700', 'shadow-sm', 'border-stone-100');
-                btnMonthly.classList.remove('text-slate-500', 'hover:text-slate-900', 'bg-transparent');
-                
-                btnAnnual.classList.add('text-slate-500', 'bg-transparent', 'hover:text-slate-900');
+                btnMonthly.classList.add('text-emerald-700', 'shadow-sm', 'border-stone-100', 'bg-white');
+                btnMonthly.classList.remove('text-slate-500', 'bg-transparent');
+                btnAnnual.classList.add('text-slate-500', 'bg-transparent');
                 btnAnnual.classList.remove('bg-white', 'text-emerald-700', 'shadow-sm', 'border-stone-100');
-
                 displayIncome.innerText = '$' + investmentData.rentUYU.toLocaleString('es-UY');
                 document.querySelector('.period-label').innerText = "(Mensual)";
             } else {
-                btnAnnual.classList.remove('text-slate-500', 'bg-transparent', 'hover:text-slate-900');
                 btnAnnual.classList.add('bg-white', 'text-emerald-700', 'shadow-sm', 'border-stone-100');
-                
-                btnMonthly.classList.add('text-slate-500', 'bg-transparent', 'hover:text-slate-900');
+                btnAnnual.classList.remove('text-slate-500', 'bg-transparent');
+                btnMonthly.classList.add('text-slate-500', 'bg-transparent');
                 btnMonthly.classList.remove('bg-white', 'text-emerald-700', 'shadow-sm', 'border-stone-100');
-
-                const annualRent = investmentData.rentUYU * 12;
-                displayIncome.innerText = '$' + annualRent.toLocaleString('es-UY');
+                displayIncome.innerText = '$' + (investmentData.rentUYU * 12).toLocaleString('es-UY');
                 document.querySelector('.period-label').innerText = "(Anual)";
             }
         }
@@ -487,21 +394,34 @@
         function scrollToSection(id) {
             const element = document.getElementById(id);
             if (element) {
-                const headerOffset = 100;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-              
-                window.scrollTo({
-                     top: offsetPosition,
-                     behavior: "smooth"
-                });
+                window.scrollTo({ top: element.offsetTop - 100, behavior: "smooth" });
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            initCharts();
+            const ctx = document.getElementById('yieldChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Esta Inversión', 'Media Mercado', 'Plazo Fijo USD'],
+                    datasets: [{
+                        data: [7.05, 4.8, 3.5],
+                        backgroundColor: ['#059669', '#cbd5e1', '#e2e8f0'],
+                        borderRadius: 8,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { callback: v => v + '%' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
         });
-
     </script>
 </body>
 </html>
